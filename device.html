@@ -157,9 +157,7 @@
             c.update('none');
         }
 
-        window.addEventListener('firebase-updated', (e) => {
-            const d = e.detail;
-
+        const updateFirebase = (d) => {
             /* 🔥 Visual pulse on Realtime cards */
             ['temp','hum','aqi-esp','pm-esp','co-esp','mq2-esp'].forEach(id => {
                 const el = document.getElementById(id);
@@ -189,7 +187,13 @@
             pushMini(miniCharts.pm,   d.pm25 ?? 0);
             pushMini(miniCharts.co,   d.co ?? 0);
             pushMini(miniCharts.mq2,  d.mq2 ?? 0);
-        });
+        };
+
+        window.addEventListener('firebase-updated', (e) => updateFirebase(e.detail));
+
+        if (window.firebaseData) {
+            updateFirebase(window.firebaseData);
+        }
 
         lucide.createIcons();
     </script>
