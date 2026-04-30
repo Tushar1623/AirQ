@@ -33,14 +33,14 @@
         <div class="main-grid">
             <!-- CHARTS -->
             <div class="chart-section">
-                <div class="chart-header-row">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
                     <h3 id="chart-title">PM2.5 Real-time Comparison</h3>
-                    <div class="chart-legend">
+                    <div style="font-size: 0.8rem; color: var(--text-dim);">
                         <span style="color: var(--accent-esp)">●</span> ESP32 (Realtime)
                         <span style="margin-left: 10px; color: var(--accent-api)">●</span> WeatherAPI (Generic)
                     </div>
                 </div>
-                <div class="main-chart-wrapper">
+                <div style="height: 400px;">
                     <canvas id="pmChart"></canvas>
                 </div>
             </div>
