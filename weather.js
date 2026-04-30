@@ -5,7 +5,7 @@ window.weatherData = null;
 
 export async function fetchWeather() {
     try {
-        const res = await fetch("http://api.weatherapi.com/v1/current.json?key=1611c318f11c4d9299b00217262604&q=Kolkata&aqi=yes");
+        const res = await fetch("https://api.weatherapi.com/v1/current.json?key=1611c318f11c4d9299b00217262604&q=Kolkata&aqi=yes");
         const data = await res.json();
 
         const temp  = data.current.temp_c;
